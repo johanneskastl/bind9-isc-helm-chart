@@ -32,6 +32,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```console
 helm install bind9 \
   --namespace bind9 \
+  --set mount_configuration_from_secret.secretName=my-named-configuration-secret
     johanneskastl-bind9-isc/bind9
 ```
 

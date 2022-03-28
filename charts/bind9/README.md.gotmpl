@@ -57,6 +57,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```console
 helm install {{ template "chart.name" . }} \
   --namespace {{ template "chart.name" . }} \
+  --set mount_configuration_from_secret.secretName=my-named-configuration-secret
     {{ template "helm.path" . }}
 ```
 {{- end -}}
