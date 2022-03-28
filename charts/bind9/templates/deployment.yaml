@@ -49,8 +49,22 @@ spec:
           readinessProbe:
             tcpSocket:
               port: 53
+          volumeMounts:
+          - name: {{ .Release.Name }}-named-conf
+            mountPath: '/etc/named/'
+            readOnly: true
+          - name: {{ .Release.Name }}-config
+            mountPath: '/named_config/'
+            readOnly: true
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: {{ .Release.Name }}-named-conf
+        secret:
+          secretName: {{ .Release.Name }}-named-conf
+      - name: {{ .Release.Name }}-config
+        secret:
+          secretName: {{ .Values.mount_configuration_from_secret.secretName }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
