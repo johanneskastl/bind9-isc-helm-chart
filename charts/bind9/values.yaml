@@ -14,6 +14,35 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+#
+# In order for this chart to work, you need to specify a secret here,
+# containing one key called 'named.conf.options' containing your
+# bind9 resolver configuration
+#
+# Example:
+# ```
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#   name: my-secret
+# stringData:
+#   named.conf.options: |
+#     options {
+#             directory "/var/cache/bind";
+#             forwarders {
+#                  1.1.1.1;
+#             };
+#             allow-recursion {
+#                     192.168.1.0/24;
+#             };
+#             dnssec-validation auto;
+#             listen-on-v6 { any; };
+#     };
+# ```
+#
+mount_configuration_from_secret:
+  secretName: my-secret
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
