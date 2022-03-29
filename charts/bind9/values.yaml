@@ -5,6 +5,10 @@
 replicaCount: 1
 
 # To use this chart to setup a resolver using bind9, enable the resolver mode
+# Possible values:
+# 'resolver': set up a resolver
+# 'authoritative': set up an authoritative nameserver
+#
 chartMode: resolver
 
 # When using this chart to set up a resolver, set the chartMode to 'resolver'
