@@ -13,6 +13,7 @@ resolver:
     - '80.241.218.68'
     - '159.69.114.157'
     - '176.9.93.198'
+  dnssec_validation: true
   ipv6_enabled: true
 
 #
