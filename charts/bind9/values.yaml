@@ -18,7 +18,7 @@ resolver:
 
 #
 # To enhance the basic configuration of this chart, you can create a secret
-# containing one key called 'named.conf.options' containing your
+# containing one key called 'named.conf.local' containing your
 # bind9 resolver configuration
 # ATTENTION: This must not contain an `options` block, only zone settings
 #            or similar are allowed
@@ -30,7 +30,7 @@ resolver:
 # metadata:
 #   name: my-secret
 # stringData:
-#   named.conf.options: |
+#   named.conf.local: |
 #     zone "my.corporate-domain.example.org" {
 #         type static-stub;
 #         server-addresses {
