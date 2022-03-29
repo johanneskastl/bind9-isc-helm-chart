@@ -6,9 +6,11 @@ replicaCount: 1
 
 
 #
-# In order for this chart to work, you need to specify a secret here,
+# To enhance the basic configuration of this chart, you can create a secret
 # containing one key called 'named.conf.options' containing your
 # bind9 resolver configuration
+# ATTENTION: This must not contain an `options` block, only zone settings
+#            or similar are allowed
 #
 # Example:
 # ```
@@ -18,16 +20,12 @@ replicaCount: 1
 #   name: my-secret
 # stringData:
 #   named.conf.options: |
-#     options {
-#             directory "/var/cache/bind";
-#             forwarders {
-#                  1.1.1.1;
-#             };
-#             allow-recursion {
-#                     192.168.1.0/24;
-#             };
-#             dnssec-validation auto;
-#             listen-on-v6 { any; };
+#     zone "my.corporate-domain.example.org" {
+#         type static-stub;
+#         server-addresses {
+#                 192.168.1.1;
+#                 192.168.1.2;
+#         };
 #     };
 # ```
 #
