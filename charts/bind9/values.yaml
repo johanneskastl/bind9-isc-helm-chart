@@ -4,6 +4,16 @@
 
 replicaCount: 1
 
+#
+# To use this chart to setup a resolver using bind9, enable the resolver mode
+# and add forwarders as you see fit
+resolver:
+  enabled: true
+  forwarders:
+    - '80.241.218.68'
+    - '159.69.114.157'
+    - '176.9.93.198'
+  ipv6_enabled: true
 
 #
 # To enhance the basic configuration of this chart, you can create a secret
