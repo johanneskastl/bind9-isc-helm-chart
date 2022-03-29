@@ -4,11 +4,12 @@
 
 replicaCount: 1
 
-#
 # To use this chart to setup a resolver using bind9, enable the resolver mode
-# and add forwarders as you see fit
+chartMode: resolver
+
+# When using this chart to set up a resolver, set the chartMode to 'resolver'
+# and add forwarders and options as you see fit
 resolver:
-  enabled: true
   forwarders:
     - '80.241.218.68'
     - '159.69.114.157'
