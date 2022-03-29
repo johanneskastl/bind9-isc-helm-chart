@@ -10,7 +10,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 53
+      targetPort: 5053
       protocol: TCP
       name: dns-tcp
   selector:
