@@ -15,6 +15,7 @@ resolver:
     - '176.9.93.198'
   dnssec_validation: true
   ipv6_enabled: true
+  querylog: false
 
 #
 # To enhance the basic configuration of this chart, you can create a secret
