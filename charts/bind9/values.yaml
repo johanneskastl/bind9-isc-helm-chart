@@ -41,6 +41,7 @@ resolver:
 # ```
 #
 mount_configuration_from_secret:
+  enabled: false
   secretName: my-secret
 
 image:
