@@ -30,7 +30,7 @@ authoritative:
 #
 # To enhance the basic configuration of this chart, you can create a secret
 # containing one key called 'named.conf.local' containing your
-# bind9 resolver configuration
+# bind9 resolver or nameserver configuration
 # ATTENTION: This must not contain an `options` block, only zone settings
 #            or similar are allowed
 #
