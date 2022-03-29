@@ -38,17 +38,17 @@ spec:
             - "bind"
           ports:
             - name: dns-udp
-              containerPort: 53
+              containerPort: 5053
               protocol: UDP
             - name: dns-tcp
-              containerPort: 53
+              containerPort: 5053
               protocol: TCP
           livenessProbe:
             tcpSocket:
-              port: 53
+              port: 5053
           readinessProbe:
             tcpSocket:
-              port: 53
+              port: 5053
           volumeMounts:
           - name: {{ .Release.Name }}-named-conf
             mountPath: '/etc/named/'
