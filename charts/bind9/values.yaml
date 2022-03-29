@@ -22,6 +22,11 @@ resolver:
   ipv6_enabled: true
   querylog: false
 
+authoritative:
+  dnssec_validation: true
+  ipv6_enabled: true
+  querylog: false
+
 #
 # To enhance the basic configuration of this chart, you can create a secret
 # containing one key called 'named.conf.local' containing your
