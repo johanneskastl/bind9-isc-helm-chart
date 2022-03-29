@@ -57,18 +57,22 @@ spec:
           - name: {{ .Release.Name }}-named-conf
             mountPath: '/etc/named/'
             readOnly: true
+          {{ if .Values.mount_configuration_from_secret.enabled -}}
           - name: {{ .Release.Name }}-user-configuration
             mountPath: '/named_config/'
             readOnly: true
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
       - name: {{ .Release.Name }}-named-conf
         secret:
           secretName: {{ .Release.Name }}-named-conf
+      {{ if .Values.mount_configuration_from_secret.enabled -}}
       - name: {{ .Release.Name }}-user-configuration
         secret:
           secretName: {{ .Values.mount_configuration_from_secret.secretName }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
