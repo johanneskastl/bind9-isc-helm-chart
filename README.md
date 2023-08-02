@@ -1,5 +1,13 @@
 # Helm Chart for bind9
 
+## This chart is deprecated!
+
+**Attention**
+
+This chart is **deprecated** in favor of the chart in the
+[johanneskastl-helm-charts](https://johanneskastl.github.io/helm-charts/)
+repository!
+
 This helm chart is based on the [official ISC docker image](https://hub.docker.com/r/internetsystemsconsortium/bind9).
 
 ## Setting up bind9 as a resolver
