@@ -3,6 +3,17 @@ entries:
   bind9:
   - apiVersion: v2
     appVersion: "9.18"
+    created: "2025-11-02T16:39:31.610849231Z"
+    deprecated: true
+    description: A Helm chart for Bind9 using the official ISC docker image
+    digest: b35551f92b4c793aa9c3f1fe53895b58a21266d231e7730035b187130cb6bdfc
+    name: bind9
+    type: application
+    urls:
+    - https://github.com/johanneskastl/bind9-isc-helm-chart/releases/download/bind9-0.5.0/bind9-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v2
+    appVersion: "9.18"
     created: "2022-10-19T05:02:25.582291941Z"
     description: A Helm chart for Bind9 using the official ISC docker image
     digest: b5d7599eb36d8fc4a7e05fbafc693e0b6144d7081ee141e49a635226b6ffc723
@@ -41,4 +52,4 @@ entries:
     urls:
     - https://github.com/johanneskastl/bind9-isc-helm-chart/releases/download/bind9-0.1.0/bind9-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-19T05:02:25.582315242Z"
+generated: "2025-11-02T16:39:31.610870891Z"
